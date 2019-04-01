@@ -1,0 +1,14 @@
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\bin\Debug\netcoreapp2.1\asp_vue_api.deps.json
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\bin\Debug\netcoreapp2.1\asp_vue_api.runtimeconfig.json
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\bin\Debug\netcoreapp2.1\asp_vue_api.runtimeconfig.dev.json
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\bin\Debug\netcoreapp2.1\asp_vue_api.dll
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\bin\Debug\netcoreapp2.1\asp_vue_api.pdb
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\obj\Debug\netcoreapp2.1\asp_vue_api.csprojAssemblyReference.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\obj\Debug\netcoreapp2.1\asp_vue_api.csproj.CoreCompileInputs.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\obj\Debug\netcoreapp2.1\asp_vue_api.RazorAssemblyInfo.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\obj\Debug\netcoreapp2.1\asp_vue_api.RazorAssemblyInfo.cs
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\obj\Debug\netcoreapp2.1\asp_vue_api.AssemblyInfoInputs.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\obj\Debug\netcoreapp2.1\asp_vue_api.AssemblyInfo.cs
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\obj\Debug\netcoreapp2.1\asp_vue_api.RazorTargetAssemblyInfo.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\obj\Debug\netcoreapp2.1\asp_vue_api.dll
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\asp_vue_api\asp_vue_api\obj\Debug\netcoreapp2.1\asp_vue_api.pdb

@@ -1,0 +1,15 @@
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\bin\Debug\myFirstWPF.exe.config
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\bin\Debug\myFirstWPF.exe
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\bin\Debug\myFirstWPF.pdb
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\myFirstWPF.csprojAssemblyReference.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\MainWindow.g.cs
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\App.g.cs
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\myFirstWPF_MarkupCompile.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\myFirstWPF_MarkupCompile.lref
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\MainWindow.baml
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\myFirstWPF.g.resources
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\myFirstWPF.Properties.Resources.resources
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\myFirstWPF.csproj.GenerateResource.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\myFirstWPF.csproj.CoreCompileInputs.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\myFirstWPF.exe
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\myFirstWPF\myFirstWPF\obj\Debug\myFirstWPF.pdb
