@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS Tryout</title>
+
+	<style>
+		body {
+			 background-color: #ccffcc;
+			
+			 text-align: center;
+			 color:#006666;
+			 font-family: Arial;
+			 }
+
+
+		h1 {
+			color: #cc99ff;
+			border: 2px dotted #cc99ff;
+			max-width:250px;
+			text-shadow: 2px 1px black;
+			
+		}
+		h2 {
+			color: #ffcccc;
+			border: 2px dotted #cc99ff;
+			max-width:250px;
+			text-shadow: 2px 1px black;
+			
+		}
+
+		
+		#forgrunn {
+			color: #ff0000;
+			font-style:italic;
+			font-weight: bold;
+		}
+		
+		#bakgrunn {
+			background-color: lightblue;
+			color:#004d80;
+			font-style:italic;
+			font-weight: bold;
+		}
+
+		.klasse1 {
+			color: #cc3300;
+			font-family: verdana;
+
+		}
+
+		#ramme {
+			border-style: ridge;
+			border-color: magenta;
+			max-width: 200px;
+		}
+
+		#padding {
+			padding-top: 25px;
+			padding-bottom: 25px;
+			
+
+			border-style:solid;
+			background-color: linen;
+		}
+
+		#margin {
+			margin-bottom: 90px;
+			margin-left:700px;
+			margin-right:700px;
+			border-style:solid;
+			background-color: #ffd9b3;
+		}
+
+		.flyt1{
+			border-style:solid;
+			border-color:#009973;
+			float:right;
+			margin:10px;
+			padding:10px;
+
+		}
+		.flyt2{
+			float:left;
+			border-style: solid;
+			border-color: #009973;
+			margin:10px;
+			padding:10px;
+		}
+
+		.cleardiv1{
+			float:left;
+		    border-style: solid;
+			border-color: #009973;
+			height:50px;
+			width: 100px;
+			margin:10px;
+			padding:10px;
+		}
+
+		.cleardiv2{
+			clear:left;
+			border-style: solid;
+			border-color: #009973;
+			height:70px;
+			width: 250px;
+			margin:10px;
+			padding:10px;
+		}
+	</style>
+</head>
+
+
+<body>
+	<center><h1>HEADER</h1></center>
+
+	<p>Paragraf 1 - hovedstil </p>
+	<p>Paragraf 2 - hovedstil </p>
+	<p style="color:hotpink";>En paragraf - med egen stil definert i taggen</p>
+
+	<div id="forgrunn"> Test av forgrunnsfarge på spesifikt element </div>
+
+	<div id="bakgrunn"> Test av bakgrunnsfarge på spesifikt element </div>
+
+	<p class="klasse1"> Dette er en paragraf i en klasse for seg! #1  </p>
+	<p class="klasse1"> Dette er en paragraf i en klasse for seg! #2  </p>
+	<p class="klasse1"> Dette er en paragraf i en klasse for seg! #3 </p>
+
+	<center><p id="ramme"> Dette er en paragraf med ramme </p></center>
+
+	<div id="padding"> Dette er en div som skal få seg litt padding, det kommer på innsiden av rammen </div>
+	<br>
+	<div id="margin"> Og denne skal få seg en marg - den dukker opp på utsiden av rammen.</div>
+
+
+	<div class="flyt1"> Fri flyt til høyre! 1 </div>
+	<div class="flyt1"> Fri flyt til høyre! 2 </div>
+	<div class="flyt1"> Fri flyt til høyre! 3 </div>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim erat ex, non condimentum dui blandit in. Proin sed pretium ipsum. Pellentesque scelerisque ex dolor. Pellentesque non nunc sed erat bibendum volutpat. Cras tempor, massa ut molestie laoreet, quam urna varius arcu, elementum semper sem felis ut diam. Sed sollicitudin, lacus egestas bibendum rhoncus, ex eros consequat justo, vel consequat lacus leo et augue. Praesent eget leo non neque lobortis finibus nec eu lorem. Praesent orci velit, commodo volutpat nibh quis, elementum placerat neque. Mauris posuere condimentum mi fringilla vulputate. In rhoncus nisi nulla, et interdum lacus venenatis at. Sed tellus mauris, vehicula id egestas ac, interdum commodo elit. Nullam vitae sapien rutrum, lacinia augue et, ultrices sem. Nullam rutrum tellus at sem aliquam congue. Integer pharetra felis nulla, nec suscipit leo finibus sed. Nullam velit sapien, vestibulum sed nunc id, rutrum dictum nisi. Nullam in enim et urna convallis sodales.
+
+Aliquam interdum ultricies hendrerit. Donec a purus at lorem luctus blandit. Vestibulum faucibus condimentum dui, eu aliquam sem elementum in. Nunc odio tortor, sagittis vel magna id, dictum dapibus odio. Maecenas et est sed turpis laoreet placerat id eget risus. Suspendisse potenti. Praesent ornare faucibus dictum. Nulla at odio eget arcu auctor dignissim. Suspendisse augue risus, suscipit non interdum a, ultrices non mauris. Nunc velit enim, lacinia pulvinar facilisis ac, accumsan ac ligula. Pellentesque diam justo, lobortis ut felis iaculis, maximus mollis nunc. </p>
+	<div class="flyt2"> Fri flyt til venstre! 4 </div>
+	<div class="flyt2"> Fri flyt til venstre! 5 </div>
+
+	<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim erat ex, non condimentum dui blandit in. Proin sed pretium ipsum. Pellentesque scelerisque ex dolor. Pellentesque non nunc sed erat bibendum volutpat. Cras tempor, massa ut molestie laoreet, quam urna varius arcu, elementum semper sem felis ut diam. Sed sollicitudin, lacus egestas bibendum rhoncus, ex eros consequat justo, vel consequat lacus leo et augue. Praesent eget leo non neque lobortis finibus nec eu lorem. Praesent orci velit, commodo volutpat nibh quis, elementum placerat neque. Mauris posuere condimentum mi fringilla vulputate. In rhoncus nisi nulla, et interdum lacus venenatis at. Sed tellus mauris, vehicula id egestas ac, interdum commodo elit. Nullam vitae sapien rutrum, lacinia augue et, ultrices sem. Nullam rutrum tellus at sem aliquam congue. Integer pharetra felis nulla, nec suscipit leo finibus sed. Nullam velit sapien, vestibulum sed nunc id, rutrum dictum nisi. Nullam in enim et urna convallis sodales.
+
+Aliquam interdum ultricies hendrerit. Donec a purus at lorem luctus blandit. Vestibulum faucibus condimentum dui, eu aliquam sem elementum in. Nunc odio tortor, sagittis vel magna id, dictum dapibus odio. Maecenas et est sed turpis laoreet placerat id eget risus. Suspendisse potenti. Praesent ornare faucibus dictum. Nulla at odio eget arcu auctor dignissim. Suspendisse augue risus, suscipit non interdum a, ultrices non mauris. Nunc velit enim, lacinia pulvinar facilisis ac, accumsan ac ligula. Pellentesque diam justo, lobortis ut felis iaculis, maximus mollis nunc. </p>
+<br>
+<center><h2> Test av Clear </h2></center>
+
+<div class="cleardiv1">  DIV 1 - Floating left </div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rutrum nunc eu elit eleifend, ut mattis dui maximus. Donec fermentum laoreet justo, vel commodo massa lacinia id. Nam gravida aliquam nunc vel vestibulum. Suspendisse potenti. Aliquam eu turpis sit amet augue dignissim lacinia at at lectus. Suspendisse elementum sagittis sapien sit amet tincidunt. Integer neque sapien, bibendum pulvinar ipsum vel, dignissim rutrum eros. Duis luctus justo eu tincidunt dictum. Duis dolor erat Aliquam vel orci sed mauris pellentesque viverra ut id felis. Nunc pretium vel ligula quis commodo. Sed tristique ligula et vestibulum aliquet. Nunc sagittis, dolor a tristique bibendum, orci risus luctus elit, in fermentum mauris urna ac enim Aliquam vel orci sed mauris pellentesque viverra ut id felis. Nunc pretium vel ligula quis commodo. Sed tristique ligula et vestibulum aliquet. Nunc sagittis, dolor a tristique bibendum, orci risus luctus elit, in fermentum mauris urna ac enim</p>
+<div class="cleardiv2">  Dette er DIV 2. Den flytter seg ned under DIV 1 som er i float (istedenfor ved siden av), så det ikke blir rotete v/hjelp av clear left.</div>
+
+</body>
+</html>

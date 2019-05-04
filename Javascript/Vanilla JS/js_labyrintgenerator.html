@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Random Labyrinth!</title>
+    <style type="text/css">
+        table {
+            border-spacing: 0;
+        }
+        td {
+            background-color: white;
+            padding: 0;
+        }
+            td.room {
+                width: 40px;
+                height: 40px;
+            }
+            td.wall {
+                background-color:green;
+				border: dashed yellow 1px;
+            }
+            td.noWall {
+                background-color: white;
+            }
+            td.small {
+                width: 10px;
+                height: 10px;
+            }
+            td.wide {
+                width: 40px;
+            }
+            td.high {
+                height: 40px;
+            }
+
+			h2{
+				color: Green;
+				border: solid green 2px;
+				width: 700px;
+				margin-left: 60px;
+			}
+    </style>
+</head>
+<body>
+
+	<h2>Klikk på vegger for å bytte mellom åpen/stengt - lag din egen vri! ;)</h2>
+    <div id="labyrinth"></div>
+
+
+    <script type="text/javascript">
+
+        var size = 15;
+        var html = '';
+
+        function openClose(wall) {
+            if(wall.classList.contains('noWall')) {
+               wall.classList.remove('noWall');
+               wall.classList.add('wall');
+            } else {
+                wall.classList.add('noWall');
+                wall.classList.remove('wall');
+            }
+        }
+
+
+        for (var x = 0; x < size; x++) {
+            html += '<tr>';
+            for (var y = 0; y < size; y++) {
+                var wallOrNoWall = x === 0 || Math.random() < 0.5 ? 'wall' : 'noWall';
+                html += '<td class="wall small"></td>';
+                html += '<td onclick="openClose(this)" class="' + wallOrNoWall + ' wide"></td>';
+            }
+				html += '<td class="wall small"></td>';
+				html += '</tr>';
+
+				html += '<tr>';
+            for (var y = 0; y < size; y++) {
+                var wallOrNoWall = y === 0 || Math.random() < 0.5 ? 'wall' : 'noWall';
+                html += '<td onclick="openClose(this)" class="' + wallOrNoWall + ' high"></td>';
+                html += '<td class="room"></td>';
+            }
+            html += '<td onclick="openClose(this)" class="wall high"></td>';
+            html += '</tr>';
+        }
+			html += '<tr>';
+        for (var y = 0; y < size; y++) {
+            html += '<td class="wall small"></td>';
+            html += '<td onclick="openClose(this)" class="wall wide"></td>';
+        }
+			html += '<td class="wall small"></td>';
+			html += '</tr>';
+			html = '<table>' + html + '</table>';
+
+			document.getElementById('labyrinth').innerHTML = html;
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hei! Kan jeg få navn & nummer?</title>
+</head>
+<body>
+	<div id="contact">
+	<input id= "name" type="text" placeholder="Skriv Ditt Navn"> 
+	</br>
+	<input id="number" type ="text" placeholder = "Telefon" >
+	</br>
+	<input id= "submit" type="submit" onclick= submit();>
+	</br>
+	</div>
+	<div id="inputlist">Henter navn & nummer.... </div>
+	
+
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+		
+		
+		<script>
+		 // Initialize Firebase
+		 var config = {
+		 apiKey: "AIzaSyClXT6LjD2gtcy-3DhQ4WA4utRZvfV0bfI",
+		 authDomain: "namenumber-d5fb0.firebaseapp.com",
+		 databaseURL: "https://namenumber-d5fb0.firebaseio.com",
+		 projectId: "namenumber-d5fb0",
+		 storageBucket: "",
+		 messagingSenderId: "659793150562"
+		 };
+		firebase.initializeApp(config);
+
+		var nn = firebase.firestore().collection('nameNumber');
+		
+			nn.onSnapshot (
+			function(collectionSnapshot) {
+		    let html = '<ul>';
+		         collectionSnapshot.forEach(
+
+				 	 function(nameNumberSnapshot){
+					 let nameNumber = nameNumberSnapshot.data();
+					 html += '<li>' + nameNumber.name + '(' + nameNumber.number + ')</li>';
+		});
+					html += '</ul>';
+					document.getElementById('inputlist').innerHTML = html;
+	  });
+			
+
+			//funkis som henter ut verdier
+			function getValues(id){
+				return document.getElementById(id).value;
+			}
+
+			function submit(){
+				 //hente ut verdier fra felt
+				var name = getValues('name');
+			    var number = getValues('number');
+
+				addToFirestore(name, number);
+			}
+
+
+				// sende uthentede verdier til firestore
+			function addToFirestore(name, number){
+				var newInputs =
+					{
+					name  : name,
+					number: number
+					};	
+					 nn.add(newInputs);
+			}
+
+</script>
+
+
+</body>
+</html>

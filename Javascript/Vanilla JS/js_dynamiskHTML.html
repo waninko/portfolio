@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Dynamisk HTML</title>
+</head>
+<body>
+    <p>Ferdighet 6 - Sette sammen tekst av flere deler  og  bruke dette til å bygge HTML dynamisk</p>
+
+	<p>Oppgave: Utvid eksempelet med en egen valgboks som lar brukeren velge mellom svart, grå eller ingen ramme (border) og en slider til hvor hvor avrundet rammen skal være (border-radius).</p><br>
+
+    <input id="sizeSlider" type="range" min="100" max="500" step="10" oninput="showDiv()" />
+
+	 <input id="rammeAvrunder" type="range" min="0" max="100" step="10" oninput="showDiv()" />
+    <br/>
+	<input id="textInput" type="text" oninput="showDiv()" value="endre teksten!" />
+
+
+    <select id="colorChooser" onchange="showDiv()">
+        <option value="pink">Råsa</option>
+        <option selected value="green">Green color</option>
+        <option value="blue">Blue color</option>
+    </select>
+
+	<select id="rammeVelger" onchange="showDiv()">
+        <option value="black">Svart Ramme</option>
+        <option value="grey">Grå Ramme</option>
+		<option value="red">Rød Ramme</option>
+        <option selected value="none">Ingen Ramme</option>
+    </select>
+
+
+
+
+    <div id="resultat"></div>
+    <div id="resultatHtml" style="font-family: monospace"></div>
+
+	<br>
+	<select onchange="showNy()" id="rammeStil">
+   <option value="dashed">dashed</option>
+  <option value="dotted">dotted</option>
+  <option value="solid">solid</option>
+</select>
+
+<div id="firkant"></div>
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var resultatHtmlDiv = document.getElementById('resultatHtml');
+        var sizeSlider = document.getElementById('sizeSlider');
+        var textInput = document.getElementById('textInput');
+        var colorChooser = document.getElementById('colorChooser');
+
+		var rammeVelger = document.getElementById('rammeVelger');
+		var rammeAvrunder = document.getElementById('rammeAvrunder');
+
+		var boks = document.getElementById("firkant");
+		var drop = document.getElementById("rammeStil");
+
+
+        showDiv();
+        function showDiv() {
+            
+            resultatDiv.innerHTML = '<div style="background-color: ' + colorChooser.value +
+                ';width: ' + 
+				sizeSlider.value + 'px;height: ' + sizeSlider.value + 
+
+				'px;border: 2px dashed ' + rammeVelger.value +
+				';border-radius: ' + rammeAvrunder.value + 'px;">' +
+                
+				textInput.value + '</div>';
+            resultatHtmlDiv.innerText = resultatDiv.innerHTML;
+        }
+
+    </script>
+</body>
+</html>

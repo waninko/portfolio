@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Todo - med objekter!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style>
+		.done {
+			 text-decoration: line-through;
+			 background-color: red;
+		}
+		/*
+		.input[type=checkbox]:checked + div {
+        text-decoration:line-through;
+         } */
+	</style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h3>Todo-CRUD (med objekter)</h3>
+            CRUD = Create, Read, Update, Delete
+        </div>
+        <div>
+            <table class="table" id="mainTable">
+                <tr>
+                    <th id="description">Beskrivelse</th>
+                    <th>Dato gjort</th>
+                    <th>Dato planlagt</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <div class="form-horizontal">
+                <div class="control-group form-inline">
+                    <label for="txtDescription" class="control-label col-xs-3">Beskrivelse</label>
+                    <input class="form-control" type="text" id="txtDescription" /><br />
+                    <label for="txtDescription" class="control-label col-xs-3">Dato planlagt</label>
+                    <input class="form-control" type="text" id="txtDatePlanned" /><br />
+                    <button class="btn-primary" onclick="addItem()">Legg til</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var allItems = [
+            {
+                description: 'Lage leksjon om egne objekterx',
+                datePlanned: '24.08.2017'
+            }
+
+
+        ];
+
+        var txtDescription = document.getElementById('txtDescription');
+        var txtDatePlanned = document.getElementById('txtDatePlanned');
+        var table = document.getElementById("mainTable");
+        showItems();
+
+        function showItems() {
+            var tableHeaderRow = table.rows[0].outerHTML;
+            table.innerHTML = tableHeaderRow;
+            for (var i = 0; i < allItems.length; i++) {
+                
+				
+				var row = table.rows[i +1] ? table.rows[i + 1] : table.insertRow();
+				row.innerHTML = '';
+				var cellDone = row.insertCell();
+                var cellDescription = row.insertCell();
+                var cellDateDone = row.insertCell();
+                var cellDatePlanned = row.insertCell();
+                var cellDelete = row.insertCell();
+                
+				cellDone.innerHTML = '<input type="checkbox" onchange="boxChecked(this, ' + i + ')" ' + (allItems[i].isDone ? 'checked ' : '') + '/>';
+				cellDescription.innerHTML = allItems[i].description;
+				cellDateDone.inenrHTML = allItems[i].dateDone ? allItems[i].dateDone : '';
+				cellDatePlanned.innerHTML = allItems[i].datePlanned;
+                cellDelete.innerHTML =
+                    '<td><a href="javascript:deleteItem('+ i + ')">delete</a></td>';
+            }
+        }
+
+        function addItem() {
+            var newItem = {};
+            newItem.description = txtDescription.value;
+            newItem.datePlanned = txtDatePlanned.value;
+            allItems.push(newItem);
+            showItems();
+        }
+        function deleteItem(index) {
+            allItems.splice(index, 1);
+            showItems();
+        }
+
+		///////
+		 function boxChecked(chkBox, index) {
+            allItems[index].isDone = chkBox.checked;
+            if (chkBox.checked) {  
+			//todaysDate();
+              d = new Date();
+              allItems[index].dateDone = d.getFullYear() + '-' + d.getMonth().toString().padStart(2, '0') + '-' + d.getDate().toString().padStart(2, '0');
+            }	
+		} showItems();
+	
+		/*
+		function todaysDate(index){
+			//var todaysDate = moment(newDate()).format('DD/MM/YYYY');
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth()+1; 
+			var yyyy = today.getFullYear();
+
+		if(dd<10) {
+		 dd = '0'+dd
+} 
+
+		if(mm<10) {
+		mm = '0'+mm
+		} 
+		today = mm + '/' + dd + '/' + yyyy;
+
+			allItems[index].dateDone = today;
+			showItems();
+	}*/
+
+		console.log(allItems);
+    </script>
+</body>
+</html>

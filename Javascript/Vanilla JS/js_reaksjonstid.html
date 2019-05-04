@@ -1,0 +1,112 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Reaksjonstid!</title>
+    <style type="text/css">
+        div.ring
+        {
+            background-color: #f0f5f5;
+            border: 1px solid black;
+            border-radius: 70%;
+            height: 50px;
+            width: 50px;
+            float: left;
+			margin: 25px;
+        }
+        div.lightOn
+        {
+            background-color: greenyellow;
+        }
+        div.start
+        {
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+	
+	<div class="ring start" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+
+    <div class="ring start" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+
+    <div class="ring start" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+
+    <div class="ring start" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+
+    <div class="ring start" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+		<div class="ring" onclick="turnOff(this)"></div>
+
+ <div id="timeUsed"></div>
+<script>
+    var startTime = new Date().getTime();
+    turnOnRandom();
+
+
+    function turnOnRandom() {
+        var elements = document.getElementsByClassName("ring");
+        var randomIndex = Math.floor(Math.random() * elements.length);
+        var selectedElement = elements[randomIndex];
+        var selectedElementClassList = selectedElement.classList;
+        selectedElementClassList.add("lightOn");
+    }
+
+
+    function turnOff(selectedElement)
+    {
+        var selectedElementClassList = selectedElement.classList;
+       
+	   if(selectedElementClassList.contains("lightOn")) {
+            var finishTime = new Date().getTime();
+            var millisec = Math.floor(finishTime - startTime);
+            var seconds = millisec / 1000;
+            document.getElementById('timeUsed').innerHTML = 'Du har en reaksjonstid på ' + seconds + ' sekunder.'
+            startTime = new Date().getTime();
+            selectedElementClassList.remove("lightOn");
+            turnOnRandom();
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

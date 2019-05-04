@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> o to X</title>
+	<style>
+		#boks {
+        background-color: hotpink;
+        width: 100px;
+        height: 100px;
+        text-align:center;
+        border-style:solid;
+        border-color:purple;
+        margin: 15px;
+		padding-top:50px;
+ 
+}
+	
+	</style>
+</head>
+<body>
+ 
+
+
+	 <table id="brett" >
+<tr>
+<td onmouseover="changeFunction(this)">O</td>
+<td onmouseover="changeFunction(this)">O</td>
+<td onmouseover="changeFunction(this)">O</td>
+  </tr>
+<tr>
+<td onmouseover="changeFunction(this)">O</td>
+<td onmouseover="changeFunction(this)">O</td>
+<td onmouseover="changeFunction(this)">O</td>
+  </tr>
+<tr>
+<td onmouseover="changeFunction(this)">O</td>
+<td onmouseover="changeFunction(this)">O</td>
+<td onmouseover="changeFunction(this)">O</td>
+  </tr>
+</table>
+<br>
+<p>klikk for større boks:</p>
+<div ID="boks" onclick="boks(this)">Boks.</div>
+
+    <script>
+    
+		function changeFunction(x){
+		x.innerHTML= 'X';
+		}
+
+		function boks(y){
+		y.style.height='200px';
+		y.style.width='500px';
+		y.innerHTML='Større Boks.';
+		y.style.background='lightblue';
+		y.style.color='blue';
+		}
+
+
+		
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JS oppgave 9e - IF/ OR (||)</title>
+</head>
+<body>
+
+<p>Ferdighet 9e - Valgsetninger - Sammenligne flere ting på en gang (eller)</p>
+    <div id="info"></div>
+    <input id="a" type="checkbox" onchange="info()" />Checkbox A<br />
+    <input id="b" type="checkbox" onchange="info()" />Checkbox B<br />
+    <input id="c" type="checkbox" onchange="info()" />Checkbox C<br />
+    <input id="d" type="checkbox" onchange="info()" />Checkbox D<br />
+	<input id="e" type="checkbox" onchange="info()" />Checkbox E<br />
+    <ul>
+        <li>Trykk på checkboksene - velg alle, ingen og noen</li>
+        <li>Oppgave: Legg til én checkbox til og få det til å virke som før med alle fem.</li>
+    </ul>
+    <script>
+        var infoDiv = document.getElementById('info');
+        var chk1 = document.getElementById('a');
+        var chk2 = document.getElementById('b');
+        var chk3 = document.getElementById('c');
+        var chk4 = document.getElementById('d');
+		var chk5 = document.getElementById('e');
+        info();
+        function info() {
+            var isChecked1 = chk1.checked;
+            var isChecked2 = chk2.checked;
+            var isChecked3 = chk3.checked;
+            var isChecked4 = chk4.checked;
+			var isChecked5 = chk5.checked;
+
+            if (isChecked1 && isChecked2 && isChecked3 && isChecked4 && isChecked5) {
+                infoDiv.innerHTML = 'Alle er valgt';
+            } else if (isChecked1 || isChecked2 || isChecked3 || isChecked4 || isChecked5) {
+                infoDiv.innerHTML = 'Noen er valgt (minst én, men ikke alle)';
+            } else {
+                infoDiv.innerHTML = 'Ingen er valgt';
+            }
+        }
+    </script>
+
+
+</body>
+</html>

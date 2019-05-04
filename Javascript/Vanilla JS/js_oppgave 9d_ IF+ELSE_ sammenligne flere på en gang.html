@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Ferdighet 9d - Valgsetninger - Sammenligne flere ting på en gang (og)</p>
+	<p>Oppgave: Utvid eksemplet slik at det viser alle de tre tekstinputene sortert,
+	altså hvilken som er nr. 1 (dette er allerede gjort i eksemplet), nr. 2 og nr. 3.
+
+Start så med en ny kopi av eksemplet og utvid dette til å fungere med fire tekstinputer, og at programmet finner hvilken av tekstene som er først. (Men ikke full sortering som i forrige oppgave.)</p>
+
+    <div id="info"></div>
+	<div id="info2"></div>
+	<div id="info3"></div>
+    <ul>
+        <li>Endre på tekstene!</li>
+        <li>Prøv også å fylle ut tall: 11, 101, 102</li>
+    </ul>
+    <input type="text" id="txt1" oninput="findFirst()" value="Per" /><br />
+    <input type="text" id="txt2" oninput="findFirst()" value="Pål" /><br />
+    <input type="text" id="txt3" oninput="findFirst()" value="Espen" /><br />
+
+
+    <script>
+        var infoDiv = document.getElementById('info'); // Plass til første på "rekka" etter sortering
+		var infoDiv2 = document.getElementById('info2'); // Plass til andre på "rekka" etter sortering
+		var infoDiv3 = document.getElementById('info3'); // Plass til tredje på "rekka" etter sortering
+        var txtDiv1 = document.getElementById('txt1'); //Tekstinput Felt 1 
+        var txtDiv2 = document.getElementById('txt2'); //Tekstinput Felt 2 
+        var txtDiv3 = document.getElementById('txt3'); //Tekstinput Felt 3
+		
+        
+		findFirst();                  //denne skal sortere etter verdien på tegna (bokstaver, tall) du setter i inputs'a :)
+        function findFirst() {
+            var txt1 = txtDiv1.value;
+            var txt2 = txtDiv2.value;
+            var txt3 = txtDiv3.value;
+			var to = '<br> #2 er:';
+            var tre = '<br> #3 er:';
+
+            infoDiv.innerHTML = 'Om vi sorterer de tre tekstene alfabetisk, er denne den første:<br/>';
+           if (txt1<=txt2 && txt1<=txt3 && txt2<=txt3) {  //hvis bokstavene/talla i felt én er mindre(tidligere i alfabetet/mindre verdt/mindre tall)
+        infoDiv.innerHTML += txt1 + to + txt2 + tre + txt3;  //enn det i input to og input 1 er mindre enn eller likt input 3
+        }  //så skriv i infoDiv (første på rekka) først det første input, variablen to, og så ...de andre på samme måte :D
+       
+	   
+	   else if (txt1 <= txt2 && txt1 <= txt3 && txt3 <= txt2){ 
+                infoDiv.innerHTML += txt1 + to + txt3 + tre +txt2;  
+        } //hvis ikke den if'en slår til: så gjør dette (else if) se om inputet i felt 1 er større enn eller likt som felt to .. osv, er like krokodillegap som over ;)
+            else if (txt2 <= txt3 && txt3 <= txt1){ 
+                infoDiv.innerHTML += txt2 + to + txt3 + tre +txt1;
+            }
+            else if (txt2 <= txt3 && txt1 <=txt3) {
+                infoDiv.innerHTML += txt2 + to + txt1 + tre +txt3;
+            }
+            else if (txt2 <= txt1) {
+                infoDiv.innerHTML += txt3 + to + txt2 + tre +txt1;
+            }
+            else if (txt1 <= txt2) {
+                infoDiv.innerHTML += txt3 + to + txt1 + tre +txt2;
+            }
+			// alle else if'ene skal dekke alle mulige utfall/rekkefølger f.eks om det du har skrivd i input 1 er større enn 2 og mindre enn 3 så puttes den på plass #2 i infoDiv
+			// eller om inputet i #3 er mindre enn alle de andre så kommer den først osv osv - er egentlig bare sortering! :D 
+            else {
+        }      infoDiv.innerHTML += ' ';  //hvis alle inputsa er tomme - så vis blankt x)
+    }
+	//BTW: Stor bokstav er "verdt mer" enn små bokstaver av sammme type og kommer da i først- og tall kommer før stor bokstav igjen :)
+    </script>
+</body>
+</html>

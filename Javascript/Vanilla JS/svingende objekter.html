@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        text {
+            font-family: helvetica;
+            font-size: 250%;
+        }
+    </style>
+</head>
+<body>
+    <svg width="100%" height="50">
+        <rect x="0" y="0" width="100%" height="100%" fill="lightgray" />
+        <g id="texts">
+
+        </g>
+    </svg>
+   <script>
+   class SwingingText {
+    constructor(speed, id, text, color) {
+        this._speed = speed;
+        this._id = id;
+        this._text = text;
+        this._color = color;
+        this._x = 0;
+        this._angle = 0;
+    }
+
+    getHtml() {
+        return '<text id="' + this._id +
+            '" x="0" y="36" fill="'
+            + this._color + '">'
+            + this._text + '</text>';
+    }
+
+    move() {
+        this._angle = (this._angle + this._speed) % 360;
+        this._x = Math.round(40 + 40 * Math.sin(Math.PI * this._angle / 180));
+        var txtElement = document.getElementById(this._id);
+        txtElement.setAttribute('x', this._x + '%');
+    }
+}
+</script>
+
+
+    <script>
+        var objects = [
+            new SwingingText(1, 'txtTest', 'GRØNN', 'green'),
+            new SwingingText(3, 'txtTurboTest', 'BLÅ', 'blue'),
+            new SwingingText(2, 'txtMerTest', 'RØD', 'red'),
+            new SwingingText(4, 'txtSuperTest', 'GUL', 'yellow'),
+        ];
+        init();
+        setInterval(move, 30);
+        function init() {
+            var texts = document.getElementById('texts');
+            for (var i in objects) {
+                texts.innerHTML += objects[i].getHtml();
+            }
+        }
+        function move() {
+            for (var i in objects) {
+                objects[i].move();
+            }
+        }
+
+    </script>
+</body>
+</html>

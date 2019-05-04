@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Ferdighet 9a - Valgsetninger Sammenligne to tall: ==, !=, &lt;, &lt;=, >, >=</p>
+	<br>
+	<div id="sizeCompareDiv"></div>
+	<p>Box A Slider </p>
+	 <input id="boxASlider" type="range" min="1" max="1000" step="1" oninput="calculate()" value="1" /><br>
+
+	 <p>Box B Slider </p>
+    <input id="boxBSlider" type="range" min="1" max="1000" step="1" oninput="calculate()" value="1" />
+	<br>
+
+    <div id="A"  onclick="calculate();"></div>
+	<br>
+	<div id="B"  onclick="calculate();"></div>
+	
+	 
+    <script>
+		
+		var a = document.getElementById('A');
+        var b = document.getElementById('B');
+        var boxA = document.getElementById('boxASlider');
+        var boxB = document.getElementById('boxBSlider');
+		var sizer = document.getElementById('sizeCompareDiv');
+
+	   calculate();
+
+		
+
+        function calculate() {
+          var sizeA = parseInt(boxA.value);
+          var sizeB = parseInt(boxB.value);
+            sizer.innerHTML = '';  
+
+		    var bkgA = 'background-color: pink;';
+			var heightA = 'height: ' + sizeA + 'px;';
+            var widthA = 'width:' + sizeA + 'px;';
+            var styleA = 'style="' + bkgA + widthA + heightA + '"';
+            var arealA = sizeA * sizeA;
+            a.innerHTML = '<div ' + styleA + '>' + 'Areal box A = ' + arealA + ' px' + '</div>';
+
+
+			var bkgB = 'background-color: purple;';
+			var heightB = 'height: ' + sizeB + 'px;';
+		    var widthB = 'width:' + sizeB + 'px;';
+            var styleB = 'style="' + bkgB + widthB + heightB + '"';
+            var arealB = sizeB * sizeB;
+
+            b.innerHTML = '<div ' + styleB + ' > ' + 'Areal box B = ' + arealB + ' px' + '</div > ';
+
+
+			 if (sizeA > sizeB) {
+                sizer.innerHTML = " Box A har størst areal.";
+            }
+            if (sizeB > sizeA) {
+                sizer.innerHTML = "Box B har størst areal.";
+            } 
+            if (sizeB == sizeA) {
+                sizer.innerHTML = "Du har fått boxene like store!";
+            }
+
+
+
+        }
+		
+
+    </script>
+</body>
+</html>

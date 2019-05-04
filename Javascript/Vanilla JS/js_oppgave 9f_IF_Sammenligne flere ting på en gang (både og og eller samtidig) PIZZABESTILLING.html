@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Ferdighet 9f - Valgsetninger - Sammenligne flere ting på en gang (og og eller sammen)</p>
+    <h3>Pizza-bestilling</h3>
+    <div id="info" style="padding-bottom: 20px;">Gjør ett valg på hver linje:</div>
+
+    Bunn: <input id="tykkBunn" type="radio" name="bunn" onchange="info()" />Tykk
+    <input id="tynnBunn" type="radio" name="bunn" onchange="info()" />Tynn <br />
+
+    Fyll: <input id="fyllTaco" type="radio" name="fyll" onchange="info()" />Taco
+    <input id="fyllKylling" type="radio" name="fyll" onchange="info()" />Kylling
+    <input id="fyllPepperoni" type="radio" name="fyll" onchange="info()" />Pepperoni<br />
+	<input id="fyllAnanas" type="radio" name="fyll" onchange="info()" />Ananas<br />
+
+    Størrelse: <input id="stor" type="radio" name="str" onchange="info()" />Stor
+    <input id="middels" type="radio" name="str" onchange="info()" />Middels
+    <input id="liten" type="radio" name="str" onchange="info()" />Liten<br />
+
+	 Laget med Kjærlighet (100,- ekstra): <input id="medKjærlighet" type="radio" name="kjærlighet" onchange="info()" />Med Kjærlighet
+    <input id="utenKjærlighet" type="radio" name="kjærlighet" onchange="info()" />Uten Kjærlighet <br />
+
+
+    <button id="bestill" disabled="" onclick="alert('Bestilt!');">Bestill</button>
+    <ul>
+        <li>Oppgave: Legg til et fyll til</li>
+        <li>Oppgave: Legg til en ting til i pizza-bestillingen, for eksempel firkantet eller rund pizza</li>
+    </ul>
+    <script>
+        var btnBestill = document.getElementById('bestill');
+        var infoDiv = document.getElementById('info');
+        var bunnTykk = document.getElementById('tykkBunn');
+        var bunnTynn = document.getElementById('tynnBunn');
+        var fyllTaco = document.getElementById('fyllTaco');
+        var fyllKylling = document.getElementById('fyllKylling');
+        var fyllPepperoni = document.getElementById('fyllPepperoni');
+		var fyllAnanas = document.getElementById('fyllAnanas');
+        var strStor = document.getElementById('stor');
+        var strMiddels = document.getElementById('middels');
+        var strLiten = document.getElementById('liten');
+		var mKjær = document.getElementById('medKjærlighet');
+		var uKjær = document.getElementById('utenKjærlighet');
+       
+	   function info() {
+            if ((bunnTykk.checked || bunnTynn.checked) &&
+                (fyllTaco.checked || fyllKylling.checked || fyllPepperoni.checked || fyllAnanas.checked ) &&
+                (strStor.checked || strMiddels.checked || strLiten.checked) &&
+				(mKjær.checked ||uKjær.checked)) {
+                infoDiv.innerHTML = 'Du har fylt ut alt og er klar til å bestille!';
+                btnBestill.disabled = false;
+            } else {
+                infoDiv.innerHTML = 'Du har ikke valgt:';
+                
+                if (!bunnTykk.checked && !bunnTynn.checked) {
+                    infoDiv.innerHTML += '<li>bunn</li>';
+                }
+                if (!fyllTaco.checked && !fyllKylling.checked && !fyllPepperoni.checked && !fyllAnanas.checked) {
+                    infoDiv.innerHTML += '<li>fyll</li>';
+                }
+                if (!strStor.checked && !strMiddels.checked && !strLiten.checked) {
+                    infoDiv.innerHTML += '<li>størrelse</li>';
+                }
+				if (!mKjær.checked && !uKjær.checked) {
+                    infoDiv.innerHTML += '<li>kjærlighet</li>';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

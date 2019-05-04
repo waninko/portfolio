@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bondesjakk</title>
+	<style>
+		
+
+
+		div{
+			background-color:lightblue;
+			height:100px;
+			width:100px;
+			margin:10px;
+			color: green;
+			font-size: 90px;
+			font-weight: bold;
+			text-align: center;
+			padding-bottom: 10px;
+			float:left;
+			}
+
+		.row1{
+			clear:left;
+		}
+
+		
+
+	
+	</style>
+</head>
+
+<body>
+	<h1>Bondesjakk AKA 3-på-rad </h1> <br>
+
+	<div class="row1" onclick="xFunction(this)"></div>
+	<div onclick="xFunction(this)"></div>
+	<div onclick="xFunction(this)"></div>
+	
+	<div class="row1" onclick="xFunction(this)"></div>
+	<div onclick="xFunction(this)"></div>
+	<div onclick="xFunction(this)"></div>
+	
+	<div class="row1" onclick="xFunction(this)"></div>
+	<div onclick="xFunction(this)"></div>
+	<div onclick="xFunction(this)"></div>
+
+	<a href="javascript:restart();" id="info"></a><br>
+	 <script>
+		
+		var isGameStopped = false;
+		
+        function xFunction(x) {
+            if (!isGameStopped && x.innerHTML !== 'x' && x.innerHTML !== 'o') 
+                {x.innerHTML = 'x';
+				checkWinning();
+				if(isGameStopped) return;
+
+                var divs1 = document.getElementsByTagName('div');
+                var divs2 = [];
+                for (var i = 0; i < divs1.length; i++) {
+                    if (divs1[i].innerHTML !== 'x' && divs1[i].innerHTML !== 'o') {
+                        divs2.push(divs1[i]);
+                    }
+                }
+                if (divs2.length > 0) {
+                    var index = Math.floor(Math.random() * divs2.length);
+                    divs2[index].innerHTML = 'o';
+                    divs2[index].style.color = 'blue';
+                }
+
+				checkWinning();
+            }
+        }
+		function checkWinning(){
+			checkWinningCombo(0,1,2);
+			if(isGameStopped) return;
+			checkWinningCombo(3,4,5);
+			if(isGameStopped) return;
+			checkWinningCombo(6,7,8);
+			if(isGameStopped) return;
+
+			checkWinningCombo(0,3,6);
+			if(isGameStopped) return;
+			checkWinningCombo(1,4,7);
+			if(isGameStopped) return;
+			checkWinningCombo(2,5,8);
+			if(isGameStopped) return;
+
+			checkWinningCombo(0,4,8);
+			if(isGameStopped) return;
+			checkWinningCombo(2,4,6);
+			
+		} 
+
+		 function checkWinningCombo(index1, index2, index3) {
+        var divs = document.getElementsByTagName('div');
+        var content1 = divs[index1].innerHTML;
+        var content2 = divs[index2].innerHTML;
+        var content3 = divs[index3].innerHTML;
+        
+        if ((content1 === 'x' || content1 === 'o') && content2 === content1 && content3 === content1
+        ) {
+            
+          
+            var winner = content1 === 'x' ? 'Du' : 'Verdens minst glupe AI';
+            document.getElementById('info').innerHTML = winner + ' vant! Klikk her for å prøve igjen!';
+            
+            
+            isGameStopped = true;
+        }
+    }
+
+		function restart(){
+			location.reload();
+		}
+    </script>
+
+</body>
+</html>

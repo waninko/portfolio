@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<style>
+	.boks{
+  width: 30px;
+  height: 30px;
+  display:inline-grid;
+  background-color:lightblue;
+  border: solid 1px;
+}
+
+#container{
+  width:110px;
+  background-color: #ccccff;
+  text-align: center;
+  color:navy;
+  font-weight: bold;
+  font-size: 20px;
+}
+	</style>
+    <title>Kodelås Knapper</title>
+</head>
+<body>
+    
+
+	<h2>Kodeknapper</h2>
+	<p>Trykk på knappene i riktig rekkefølge (3,8,1,2 ) for å få en hemmelig beskjed!</p>
+	<p> Men i første omgang vises bare hvilke knapper du har trykket på i divven under knappene </p>
+
+<div id="container"> <center>
+<div class="boks" onclick="klikk(this.innerHTML)">1</div>
+<div class="boks" onclick="klikk(this.innerHTML)">2</div>
+<div class="boks" onclick="klikk(this.innerHTML)">3</div>
+  
+<div class="boks" onclick="klikk(this.innerHTML)">4</div>
+<div class="boks" onclick="klikk(this.innerHTML)">5</div>
+<div class="boks" onclick="klikk(this.innerHTML)">6</div>
+  
+<div class="boks" onclick="klikk(this.innerHTML)">7</div>
+<div class="boks" onclick="klikk(this.innerHTML)">8</div>
+<div class="boks" onclick="klikk(this.innerHTML)">9</div>
+  
+<div class="boks" onclick="klikk(this.innerHTML)">OK</div>
+</center>
+  <p id="tallBoks"></p>
+</div>
+    <script>
+	  var tall = "";
+	  var txt = document.getElementById('tallBoks');
+
+
+	  
+		function klikk(knapp){
+		 if(tall.length == 5){ 
+		 clear();
+		 txt.innerHTML ="For mange tall!"  //Litt greit å ikke fylle hele skjermen med tall, hehe
+  }
+		 else if(knapp=="OK"){
+		  if(tall=="3812"){
+	      clear();
+          txt.innerHTML = "HURRA! <br> Du har åpnet kodelåsen! <br><br> ˁ˚ᴥ˚ˀ";   
+		 }
+			
+   
+  }    
+		else{
+        tall += knapp; 
+        txt.innerHTML = tall;
+		}
+  }
+
+		function clear(){
+		tall = "";
+		
+         }
+
+
+   </script>
+</body>
+</html>

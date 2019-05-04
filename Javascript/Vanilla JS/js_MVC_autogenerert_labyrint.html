@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        table {
+            border-spacing: 0;
+        }
+        td {
+            background-color: white;
+            padding: 0;
+        }
+            td.room {
+                width: 40px;
+                height: 40px;
+            }
+            td.wall {
+                background-color: black;
+            }
+            td.noWall {
+                background-color: white;
+            }
+            td.small {
+                width: 10px;
+                height: 10px;
+            }
+            td.wide {
+                width: 40px;
+            }
+            td.high {
+                height: 40px;
+            }
+    </style>
+</head>
+<body>
+    <div id="labyrinth"></div>
+    <script type="text/javascript">
+	var mazeModel = initModel(10);
+	updateView();
+		
+		function initModel(size){
+		var mazeModel =  {};
+		mazeModel.size = size;
+		mazeModel.rows = [];
+		for (var rowIndex = 0; rowIndex <= size*2; rowIndex++) {
+			 var row = rowIndex % 2 ===0 
+			 ? initRow(size, rowIndex, 'small wall', 'wide wall') 
+			 : initRow(size, rowIndex, 'high wall', 'room');
+			 mazeModel.rows.push(row);
+			
+		 }
+		 return mazeModel;
+		}
+
+
+
+		function initRow(size, rowIndex, alt1, alt2){
+		var row = [];
+		for (var columnIndex = 0; columnIndex <= size*2; columnIndex++) {
+			var cell = {};
+			cell.type = columnIndex % 2 === 0 ? alt1 : alt2;
+			if(cell.type === 'small wall'
+			    || columnIndex===0
+				|| columnIndex===size*2
+				|| rowIndex===0
+				|| rowIndex===size*2)
+			{cell.isOpen= false;}
+
+			else if (cell.type === 'room')	
+			{cell.isOpen = true;} //åpen hvit farge når room
+			
+			else
+				cell.isOpen = Math.random() < 0.5;
+			row.push(cell);	
+		 }
+			return row;
+		}
+		
+
+        function switchWall(rowIndex, columnIndex) {
+           var cellmodel = mazeModel.rows[rowIndex][columnIndex];
+			cellModel.isOpen = !cellModel.isOpen;
+			updateView();
+        }
+
+		  function updateView() {
+            var html = '';
+            var rows = mazeModel.rows;
+            for (var rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+                html += '<tr>';
+                var rowModel = rows[rowIndex];
+                for (var columnIndex = 0; columnIndex < rows.length; columnIndex++) {
+                    var cellModel = rowModel[columnIndex];
+                    var cssClass = '';
+                    var onClick = ' onclick="switchWall(' + rowIndex + ',' + columnIndex + ')" ';
+                    if (cellModel.type === 'room') {
+                        cssClass = 'room';
+                        onClick = '';
+                    } else if (cellModel.type === 'small wall') {
+                        cssClass = 'small wall';
+                        onClick = '';
+                    } else if (cellModel.type === 'wide wall') {
+                        cssClass = 'wide ' + (cellModel.isOpen ? 'noWall' : 'wall');
+                    } else if (cellModel.type === 'high wall') {
+                        cssClass = 'high ' + (cellModel.isOpen ? 'noWall' : 'wall');
+                    }
+                    html += '<td ' + onClick + 'class="' + cssClass + '"></td>';
+                }
+                html += '</tr>';
+            }
+            html = '<table>' + html + '</table>';
+            document.getElementById('labyrinth').innerHTML = html;
+        }
+	</script>
+</body>
+</html>

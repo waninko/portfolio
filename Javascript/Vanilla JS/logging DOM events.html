@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Test of Events</title>
+	<style>
+		body{
+			text-align:center;
+			background-color:#ffffcc;
+			font-style:Arial;
+			font-weight:bold;
+		}
+		h1{
+			color:#993366;
+			text-decoration: underline overline;
+		}
+
+		#para1{
+			 font-style: italic;
+		}
+
+		#info{
+			font-size: 16px;
+			color:#993366;
+		}
+
+		#tastetrykk{
+		
+		}
+
+		#dobbelklikk{
+			border: 3px solid green;
+			margin-left:800px;
+			margin-right:800px;
+		}
+
+		#meny{
+		}
+
+		
+
+	</style>
+</head>
+<body input type="text" onkeydown="testKeydown()">
+	<h1>Test of Events!</h1>
+
+	<p id="para1"> Alle events logges kun i konsollen. Konsollen kan åpnes med hurtigtastene <p id="info">Ctrl+Shift+S i FireFox og F12 i Chrome.</p></p>
+	<hr>
+	<p id="tastetrykk">~ Trykk på en knapp på tastaturet for å logge tastetrykket ~</p>
+
+	
+	 <p id="dobbelklikk" ondblclick="testDobbelKlikk()">Dobbeltrykk her!</p> 
+
+	  <div id="meny" oncontextmenu="testContextMenu()" contextmenu="mymenu"> Prøv med en "museknapp meny"" her </div>
+    <h2 id="print">  </h2>
+
+
+	
+
+
+	<script>
+	function testDobbelKlikk() {
+            
+			console.log(testDobbelKlikk);
+        }
+	
+
+	function testContextMenu(){
+			
+			console.log(testContextMenu);
+	}
+
+	function testKeydown(){
+			
+			console.log(testKeydown);
+	}
+
+
+
+	</script>
+</body>
+</html>

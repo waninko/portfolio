@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Åpningstider</title>
+</head>
+<body>
+Dag: <input id="day" onchange="showDayAndTime()" type="range" min="1" max="7"/><br/>
+Time: <input id="hour" onchange="showDayAndTime()" type="range" min="0" max="23"/><br/>
+Minutter: <input id="minute" onchange="showDayAndTime()" type="range" min="0" max="59"/><br/>
+
+<div id="dayAndTime" style="padding-top: 20px;"></div>
+
+<script type="text/javascript">
+
+function showDayAndTime() {
+    var div = document.getElementById('dayAndTime');
+	var hour = document.getElementById('hour').value;
+    var minute = document.getElementById('minute').value; 
+    var day = document.getElementById('day').value;
+	var dayNo = parseInt(day);
+	
+			 if (dayNo === 1) day = ' Mandag';
+            else if (dayNo === 2) day = ' Tirsdag';
+            else if (dayNo === 3) day = ' Onsdag';
+            else if (dayNo === 4) day = ' Torsdag';
+            else if (dayNo === 5) day = ' Fredag';
+            else if (dayNo === 6) day = ' Lørdag';
+            else if (dayNo === 7) day = ' Søndag';
+		div.innerHTML = 'Dag:' + day + '<br>'+ 'Time:' + hour + '<br>'+ 'Minutt:' + minute;
+		
+	if(dayNo < 5){
+		if (hour >= 11 && hour <=16) 
+		     div.innerHTML += '<p> Open 11-17 <p>';
+		else div.innerHTML += '<p>Closed.</p>';
+		}
+
+	else if(dayNo === 5){
+		if (hour >= 11 && hour <=17)
+		     div.innerHTML += '<p>Open 11-18</p>' ;
+		else div.innerHTML += '<p> Closed. </p>';
+		}
+
+	else if(dayNo === 6){
+		if (hour >= 11 && hour <=14) 
+		     div.innerHTML += '<p> Open 11-15 </p>';
+		else div.innerHTML +='<p> Closed. </p>';
+		}
+
+		 else if(dayNo === 7){
+		 div.innerHTML += '<p> Closed on sundays. </p>';
+		}
+	}
+</script>
+</body>
+</html>

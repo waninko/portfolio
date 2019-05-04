@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Mini Quiz</title>
+	<style>
+		body{
+			text-align:center;
+			background-color:#ffffcc;
+			font-style:Arial;
+
+		}
+		h1{
+			color:#993366;
+		}
+
+		h2{
+			text-decoration: underline overline;
+		}
+		#riktig{
+			color: red;
+			font-size: 25px;
+			font-weight:bold;
+		}
+
+		#feil{
+			color: blue;
+			font-size: 15px;
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<h1>Mini Quiz</h1>
+
+   
+
+	<h2>Hvilken by er hovedstaden i Australia?</h2>
+
+	<p onclick="feil()"> Sydney </p>
+	<p onclick="riktig()"> Canberra </p>
+	<p onclick="feil()"> Melbourne </p>
+	<p onclick="feil()"> Perth </p>
+	<hr>
+	<p ID="riktig">  </p>
+	<p ID="feil">  </p>
+	
+
+    <script>
+        
+
+		function riktig() {
+            document.getElementById('riktig').innerHTML = 'KORREKT! GRATULERER!';
+        }
+
+		function feil() {
+            document.getElementById('feil').innerHTML = 'Feil, prøv igjen :(';
+        }
+    </script>
+</body>
+</html>

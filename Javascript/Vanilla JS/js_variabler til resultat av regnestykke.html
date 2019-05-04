@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Ferdighet 7 - Sette variabel til resultat av et regnestykke. </p>
+	<p>Oppgave: Lag en slider for å velge bredde fra 1 til 1000 og en slider for å velge høyde fra 1 til 1000. Vis en div med valgt bredde og høyde - og legg inn tekst i diven som viser arealet (bredde*høyde) og omkretsen (2*bredde+2*høyde).</p><br><br>
+
+    <input id="bredde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="1" />
+
+    <input id="høyde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="1" />
+    <div id="resultat"></div>
+
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var breddeInput = document.getElementById('bredde');
+        var høydeInput = document.getElementById('høyde');
+       
+	   calculate();
+        function calculate() {
+            var bredde = parseInt(breddeInput.value);
+            var høyde = parseInt(høydeInput.value);
+            var produkt = bredde * høyde;
+            var omkrets =  (2*bredde+2*høyde);
+
+            resultatDiv.innerHTML = 'Arealet er' + ' '+
+                bredde + '*' + høyde+ '=' + produkt + '<br/>' +
+                'Omkretsen er '+ '2x(' + bredde + '+' + høyde + ')'+'=' + omkrets;
+                
+				       
+        }
+    </script>
+</body>
+</html>

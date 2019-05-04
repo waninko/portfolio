@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+
+		div {
+			text-align: center;
+            color: black;
+            width: 200px;
+        }
+
+		.chosen{
+			border: 1px solid lightblue;
+		}
+
+        .bkg {
+            background-color: blueviolet;
+        }
+
+		.border {
+			border: 2px dotted pink;
+		}
+
+		.padding {
+			padding: 20px;
+			
+		}
+
+		.font {
+			font-style: italic;
+			font-weight: bold;
+			
+		}
+
+		.textcolor{
+			color: red;
+		}
+
+    </style>
+</head>
+<body>
+<P>Oppgave: Lag fem forskjellige navngitte css-stiler som regulerer ulike ting, for eksempel, border, padding, margin , background-color og color. 
+
+Lag fem div-er og fem checkboxer. Når du trykker på en div, skal det på en eller annen måte vises hvilken div som er valgt.
+
+Når man trykker på en checkbox, skal den stilsvarende css klassen slås på for den valgte div-en. 
+
+Når du velger en ny div, må checkboxene oppdateres til å vise riktig om de er skrudd av eller på. Og hvis man trykker på en checkbox som er valgt, skal den tilsvarende css klassen fjernes fra den valgte div-en.</P><br><br>
+
+
+    <!--Her er funksjonen som velger div (kalt chooseDiv) satt til onclick - og sier til funksjonen at det er DENNE (THIS) som funksjonens ting inne i parantesen (nede 'hos' funksjonen, i dette tilfellet x - ser forklaring der nede ^^) skal "utføres" på (her sette på ramme så man ser at den er valgt) -->
+    <div id="div1"  onclick="chooseDiv(this);">DIV 1</div> 
+	<div id="div2"  onclick="chooseDiv(this);">DIV 2</div>
+	<div id="div3"  onclick="chooseDiv(this);">DIV 3</div>
+	<div id="div4"  onclick="chooseDiv(this);">DIV 4</div>
+	<div id="div5"  onclick="chooseDiv(this);">DIV 5 </div>
+	<br>
+		<!-- Her er den en annen funkis som blir kalt på - og på en annen måte (onchange! - når noe endrer seg i elementet - her: en hake i checkboksen :D  ) denne funksjonen skal gjøre at checkmarken aktiverer en CSS stil på det elementet man har valgt med den andre funksjonen - chooseDiv :D-->
+    <input id="bkg" type="checkbox" onchange="checkBox(this);">BKG</input>
+	<input id="border" type="checkbox" onchange="checkBox(this);">BORDER</input>
+	<input id="padding" type="checkbox" onchange="checkBox(this);">PADDING</input>
+	<input id="font" type="checkbox" onchange="checkBox(this);">FONT</input>
+	<input id="textcolor" type="checkbox" onchange="checkBox(this);">TEXTCOLOR</input>
+
+    <script>
+
+		// bare noen variabler - de er globale ("holder på verdien" som funksjonen setter til dem (css stilene))
+		var bkg = document.getElementById('bkg');
+        var border = document.getElementById('border');
+        var padding = document.getElementById('padding');
+        var font = document.getElementById('font');
+        var textcolor = document.getElementById('textcolor');
+
+		
+		var divs = document.getElementsByTagName('div'); //denne variablen "velger/tar tak i"  alt som har <div> tagger,slik at det kan endres synkront 
+        var chosenDiv = divs[Math.floor(Math.random() * divs.length)];
+        //Vet du hva? Jeg aner ikke hva denne gjør - den er *kremt* stjålet  :|
+		// men det virker som om den tar den valgte diven og gir den verdien av at
+		//alle div'er (divs) og finner et random helt tall(floor) og ganger det med antall div'er (divs.length - er ikke dette arrays tro?)?  
+      
+	  // her "starter/kjøres" funksjonen som "velges" oppe i onclickene på div'ene 
+        chooseDiv(currentDiv);
+
+        function chooseDiv(x) {  // i parantesen her står det X, men det kunne stått hva som helst, f.eks sputnik. Men x er kort og greit :)
+
+            chosenDiv.classList.remove('chosen'); //Dette fjerner chosen-stilen fra den som er trykket på når du trykker på en annen
+ 
+            chosenDiv = x; // Her er den samme x-verdien som i parantesen - her "kobles" den man har klikket på til funksjonen via X'en (som kunne ha het Sputnik ;P)
+
+            chosenDiv.classList.add('chosen');  //Her legges CSS stilen "chosen" til på den div'en som ble klikket på - slik at man kan se hvem som er valgt - her blir f.eks en lyseblå border lagt på:)
+
+			bkg.checked = chosenDiv.classList.contains('bkg');
+            border.checked = chosenDiv.classList.contains('border');
+            padding.checked = chosenDiv.classList.contains('padding');
+            font.checked = chosenDiv.classList.contains('font');
+            textcolor.checked = chosenDiv.classList.contains('textcolor');
+			//hvis de og de stilene er checka i boksene (.checked) så legges den tilhørende CSS stilen på boksen 
+
+			
+        }
+		// denne funkisen gjør at checkboxene blir checket 
+        function checkBox(y) { // her står det Y i parantesen - det kan stå hva som helst - men jeg valgte y fordi jeg er makelig anlagt :P
+
+            chosenDiv.classList.toggle(y.id, y.checked);  // her er Y igjen, det samme som du skrev i parantesen til funkisen (kan ha vært hva som helst der oppe, bare det er makent her nede :D)
+
+			//Når en div er valgt så blir det lagt på en stil fra checken, husker ikke helt hva "id" symboliserer her, men regner med det har noe med en ID på et element å gjøre - y er den som er valgt av checkene som kunne hett hva som helst annet enn y også - så lenge det matcher med det i parantesen til funksjonen (parameter) og det under i selve funkisen :D
+         }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body onload="textOnLoad()">
+
+
+	Lag en enkel html-side som legger til tekst i en div både direkte i script-taggen og via en funksjon som blir kalt fra body sin onload-event. Logg tidspunktet for begge deler vha. denne koden:
+
+	document.getElementById('a').innerHTML = '' + new Date().toTimeString();
+
+ Legg inn et stort bilde på websiden og se hvordan dette påvirker tidene. Husk å reloade siden med ctrl-f5 for å tvinge den til å laste inn bildet - og ikke bare hente det fra cache. 
+ <br><br><br>
+
+ <div id="div1">teeeeeeeeest </div>
+ <div id="div2" style="border: 1px solid"> Teeeeeeeeest </div>
+ <br>
+ <p> stooooooooooort bilde - for å se hvordan det påvirker "execution times" på funksjonene </p>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Large_Scaled_Forest_Lizard.jpg">
+
+    <script>
+
+		
+
+      function textFunction(){
+				document.getElementById('div1').innerHTML = 'Her kommer tekst når siden lastet, via funksjon i script taggen'+ (new Date().toTimeString()) ;
+		}
+	
+
+	  function textOnLoad(){
+		document.getElementById('div2').innerHTML = 'Her kommer tekst når siden lastet, via onload i body'+ (new Date().toTimeString());
+		 }
+
+
+		
+
+		textFunction();
+		
+
+		
+    </script>
+</body>
+</html>
