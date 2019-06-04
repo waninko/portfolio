@@ -1,0 +1,14 @@
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\bin\Debug\netcoreapp2.1\vaskeApp.deps.json
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\bin\Debug\netcoreapp2.1\vaskeApp.runtimeconfig.json
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\bin\Debug\netcoreapp2.1\vaskeApp.runtimeconfig.dev.json
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\bin\Debug\netcoreapp2.1\vaskeApp.dll
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\bin\Debug\netcoreapp2.1\vaskeApp.pdb
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\obj\Debug\netcoreapp2.1\vaskeApp.csprojAssemblyReference.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\obj\Debug\netcoreapp2.1\vaskeApp.csproj.CoreCompileInputs.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\obj\Debug\netcoreapp2.1\vaskeApp.RazorAssemblyInfo.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\obj\Debug\netcoreapp2.1\vaskeApp.RazorAssemblyInfo.cs
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\obj\Debug\netcoreapp2.1\vaskeApp.AssemblyInfoInputs.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\obj\Debug\netcoreapp2.1\vaskeApp.AssemblyInfo.cs
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\obj\Debug\netcoreapp2.1\vaskeApp.RazorTargetAssemblyInfo.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\obj\Debug\netcoreapp2.1\vaskeApp.dll
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\vaskeApp\vaskeApp\obj\Debug\netcoreapp2.1\vaskeApp.pdb
