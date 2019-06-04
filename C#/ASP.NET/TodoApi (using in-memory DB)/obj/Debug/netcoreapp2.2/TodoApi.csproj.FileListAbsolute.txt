@@ -1,0 +1,14 @@
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\bin\Debug\netcoreapp2.2\TodoApi.deps.json
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\bin\Debug\netcoreapp2.2\TodoApi.runtimeconfig.json
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\bin\Debug\netcoreapp2.2\TodoApi.runtimeconfig.dev.json
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\bin\Debug\netcoreapp2.2\TodoApi.dll
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\bin\Debug\netcoreapp2.2\TodoApi.pdb
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\obj\Debug\netcoreapp2.2\TodoApi.csprojAssemblyReference.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\obj\Debug\netcoreapp2.2\TodoApi.csproj.CoreCompileInputs.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\obj\Debug\netcoreapp2.2\TodoApi.RazorAssemblyInfo.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\obj\Debug\netcoreapp2.2\TodoApi.RazorAssemblyInfo.cs
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\obj\Debug\netcoreapp2.2\TodoApi.AssemblyInfoInputs.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\obj\Debug\netcoreapp2.2\TodoApi.AssemblyInfo.cs
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\obj\Debug\netcoreapp2.2\TodoApi.RazorTargetAssemblyInfo.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\obj\Debug\netcoreapp2.2\TodoApi.dll
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\TodoApi\obj\Debug\netcoreapp2.2\TodoApi.pdb
