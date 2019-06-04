@@ -1,0 +1,10 @@
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\bin\Debug\EndlessRunner.exe.config
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\bin\Debug\EndlessRunner.exe
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\bin\Debug\EndlessRunner.pdb
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\obj\Debug\EndlessRunner.csprojAssemblyReference.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\obj\Debug\EndlessRunner.Form1.resources
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\obj\Debug\EndlessRunner.Properties.Resources.resources
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\obj\Debug\EndlessRunner.csproj.GenerateResource.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\obj\Debug\EndlessRunner.csproj.CoreCompileInputs.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\obj\Debug\EndlessRunner.exe
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\EndlessRunner\EndlessRunner\obj\Debug\EndlessRunner.pdb
