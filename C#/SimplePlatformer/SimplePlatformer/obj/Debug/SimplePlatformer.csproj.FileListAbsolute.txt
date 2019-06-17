@@ -1,0 +1,10 @@
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\obj\Debug\SimplePlatformer.csprojAssemblyReference.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\obj\Debug\SimplePlatformer.Form1.resources
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\obj\Debug\SimplePlatformer.Properties.Resources.resources
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\obj\Debug\SimplePlatformer.csproj.GenerateResource.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\obj\Debug\SimplePlatformer.csproj.CoreCompileInputs.cache
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\bin\Debug\SimplePlatformer.exe.config
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\bin\Debug\SimplePlatformer.exe
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\bin\Debug\SimplePlatformer.pdb
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\obj\Debug\SimplePlatformer.exe
+C:\Users\GET Academy\Documents\GitHub\skoleOppgaver\SimplePlatformer\SimplePlatformer\obj\Debug\SimplePlatformer.pdb
