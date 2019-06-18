@@ -1,0 +1,2 @@
+This is a backend for an earlier project. Originally used along with a vue.js frontend - it enables
+administrators of usergroups to update, remove or create new users in a postgreSQL database.
