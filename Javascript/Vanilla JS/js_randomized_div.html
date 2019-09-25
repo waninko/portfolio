@@ -5,10 +5,7 @@
     <meta charset="utf-8" />
     <title>Random Box</title>
 	<style>
-		#box{
-		  background-color: red;
-		  
-    }
+	
 	</style>
 </head>
 <body>
@@ -30,7 +27,9 @@ var textDiv = document.getElementById('text');
 			var width = 100 + Math.floor(Math.random()* 30);
       var bordersize = 5 + Math.floor(Math.random()* 5);
 			
-      boxDiv.style = `height: ${height}px; width: ${width}px; border: ${bordersize}px solid pink;`
+	  boxDiv.style = `height: ${height}px; 
+	  				 width: ${width}px; 
+	  				border: ${bordersize}px solid pink;`
       
       textDiv.innerHTML = `Høyde: ${height} pixler <br> Bredde: ${width} pixler <br> Border: ${bordersize} pixler`
 	}
