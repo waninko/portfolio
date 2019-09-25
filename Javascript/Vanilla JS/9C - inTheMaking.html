@@ -54,9 +54,10 @@
             else if (buttonClicked == divC) {
                 infoDiv.innerHTML += 'C';
                 numberOfClicksC++;
+                console.log("div c clicked: " + numberOfClicksC);
             }
 
-            if (buttonLastClicked == buttonClicked && numberOfClicksA == 3 || numberOfClicksB == 3 || numberOfClicksA == 3) {
+            if (buttonLastClicked == buttonClicked && numberOfClicksA == 3 || numberOfClicksB == 3 || numberOfClicksC == 3) {
                 infoDiv.innerHTML += '<br>(Tredje gangen på rad... du må VIRKELIG like denne firkanten...)'
                 if(numberOfClicksA == 3){numberOfClicksA = 0;}
                 if(numberOfClicksB == 3){numberOfClicksB = 0;}
