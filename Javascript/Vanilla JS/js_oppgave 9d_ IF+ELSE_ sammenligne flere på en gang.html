@@ -38,29 +38,30 @@ Start så med en ny kopi av eksemplet og utvid dette til å fungere med fire tek
             var txt1 = txtDiv1.value;
             var txt2 = txtDiv2.value;
             var txt3 = txtDiv3.value;
+            var en = '<br> #1 er:';
 			var to = '<br> #2 er:';
             var tre = '<br> #3 er:';
 
             infoDiv.innerHTML = 'Om vi sorterer de tre tekstene alfabetisk, er denne den første:<br/>';
            if (txt1<=txt2 && txt1<=txt3 && txt2<=txt3) {  //hvis bokstavene/talla i felt én er mindre(tidligere i alfabetet/mindre verdt/mindre tall)
-        infoDiv.innerHTML += txt1 + to + txt2 + tre + txt3;  //enn det i input to og input 1 er mindre enn eller likt input 3
+        infoDiv.innerHTML += en + txt1 + to + txt2 + tre + txt3;  //enn det i input to og input 1 er mindre enn eller likt input 3
         }  //så skriv i infoDiv (første på rekka) først det første input, variablen to, og så ...de andre på samme måte :D
        
 	   
 	   else if (txt1 <= txt2 && txt1 <= txt3 && txt3 <= txt2){ 
-                infoDiv.innerHTML += txt1 + to + txt3 + tre +txt2;  
+                infoDiv.innerHTML += en + txt1 + to + txt3 + tre +txt2;  
         } //hvis ikke den if'en slår til: så gjør dette (else if) se om inputet i felt 1 er større enn eller likt som felt to .. osv, er like krokodillegap som over ;)
             else if (txt2 <= txt3 && txt3 <= txt1){ 
-                infoDiv.innerHTML += txt2 + to + txt3 + tre +txt1;
+                infoDiv.innerHTML += en + txt2 + to + txt3 + tre +txt1;
             }
             else if (txt2 <= txt3 && txt1 <=txt3) {
-                infoDiv.innerHTML += txt2 + to + txt1 + tre +txt3;
+                infoDiv.innerHTML += en + txt2 + to + txt1 + tre +txt3;
             }
             else if (txt2 <= txt1) {
-                infoDiv.innerHTML += txt3 + to + txt2 + tre +txt1;
+                infoDiv.innerHTML += en + txt3 + to + txt2 + tre +txt1;
             }
             else if (txt1 <= txt2) {
-                infoDiv.innerHTML += txt3 + to + txt1 + tre +txt2;
+                infoDiv.innerHTML += en + txt3 + to + txt1 + tre +txt2;
             }
 			// alle else if'ene skal dekke alle mulige utfall/rekkefølger f.eks om det du har skrivd i input 1 er større enn 2 og mindre enn 3 så puttes den på plass #2 i infoDiv
 			// eller om inputet i #3 er mindre enn alle de andre så kommer den først osv osv - er egentlig bare sortering! :D 
