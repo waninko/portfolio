@@ -14,25 +14,50 @@
     <input id="høyde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="1" />
     <div id="resultat"></div>
 
+    <select id="formelChooser" onchange="showMath(this)">
+        <option selected value="none">Vennligst Velg</option>
+        <option value="areal">Areal</option>
+        <option value="omkrets">Omkrets</option>
+    </select>
 
     <script>
         var resultatDiv = document.getElementById('resultat');
         var breddeInput = document.getElementById('bredde');
         var høydeInput = document.getElementById('høyde');
-       
+        var bredde;
+        var høyde;
+        
+
 	   calculate();
         function calculate() {
-            var bredde = parseInt(breddeInput.value);
-            var høyde = parseInt(høydeInput.value);
-            var produkt = bredde * høyde;
-            var omkrets =  (2*bredde+2*høyde);
-
-            resultatDiv.innerHTML = 'Arealet er' + ' '+
-                bredde + '*' + høyde+ '=' + produkt + '<br/>' +
-                'Omkretsen er '+ '2x(' + bredde + '+' + høyde + ')'+'=' + omkrets;
-                
+            bredde = parseInt(breddeInput.value);
+            høyde = parseInt(høydeInput.value);
+           
+            resultatDiv.innerHTML = "Bredde verdi: " +bredde +  "<br>" +"Høyde verdi: " + høyde + "<br>";
+            
+            console.log("formel: " + chosenFormel);
+          
+            
+              
 				       
         }
+        function showMath(chosenFormel){
+            var produkt = bredde * høyde;
+            var omkrets =  (2*bredde+2*høyde);
+            if (chosenFormel.value == "areal"){
+                resultatDiv.innerHTML = 'Arealet er' + ' '+bredde + '*' + høyde+ ' = ' + produkt;
+                
+            }
+            else if (chosenFormel.value == "omkrets"){
+                resultatDiv.innerHTML = 'Omkretsen er '+ '2x(' + bredde + '+' + høyde + ')'+' = ' + omkrets;
+                
+                
+            }
+            else { resultatDiv.innerHTML = 'Vennligest velg en formel å benytte på valgte nummer';}
+            
+        }
+
+       
     </script>
 </body>
 </html>
