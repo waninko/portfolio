@@ -25,7 +25,7 @@
     <div id="a" onclick="doClick(this)" style="background-color: pink">A</div>
     <div id="b" onclick="doClick(this)" style="background-color: lightgreen">B</div>
     <div id="c" onclick="doClick(this)" style="background-color: lightblue">C</div>
-    <div id="info" onclick="doClick(this)">Tykk på en firkant!</div>
+    <div id="info" >Tykk på en firkant!</div>
     <script>
         var infoDiv = document.getElementById('info');
         var divA = document.getElementById('a');
@@ -59,7 +59,7 @@
 
             if (buttonLastClicked == buttonClicked && numberOfClicksA == 3 || numberOfClicksB == 3 || numberOfClicksC == 3) {
                 infoDiv.innerHTML += '<br>(Tredje gangen på rad... du må VIRKELIG like denne firkanten...)'
-                if(numberOfClicksA == 3){numberOfClicksA = 0;}
+                if(numberOfClicksA == 3){numberOfClicksA = 0;} 
                 if(numberOfClicksB == 3){numberOfClicksB = 0;}
                 if(numberOfClicksC == 3){numberOfClicksC = 0;}
                 
