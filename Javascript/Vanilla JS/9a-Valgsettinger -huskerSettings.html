@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style></style>
+  </head>
+
+  <body>
+    <p>Oppgave 9a</p>
+    <button id="buttonA" onclick="chooseBox(this)">Velg Div A</button>
+    <button id="buttonB" onclick="chooseBox(this)">Velg Div B</button><br />
+
+    <p id="valgt">Du har valgt</p>
+    <div id="areal"></div>
+    <label>Width: </label>
+    <input
+      id="widthSlider"
+      type="range"
+      min="1"
+      max="100"
+      step="1"
+      oninput="calculate()"
+      value="1"
+    />
+    <label>Height: </label>
+    <input
+      id="heightSlider"
+      type="range"
+      min="1"
+      max="100"
+      step="1"
+      oninput="calculate()"
+      value="1"
+    />
+
+    <div id="A" style="border:1px solid black;">Dette er Div A</div>
+    <br />
+    <div id="B" style="border:1px solid black;">Dette er Div B</div>
+    <br />
+
+    <script>
+      var divA = document.getElementById("A");
+      var divB = document.getElementById("B");
+      var arealDiv = document.getElementById("areal");
+      var valgtDiv;
+
+      var widthSum = document.getElementById("widthSlider");
+      var heightSum = document.getElementById("heightSlider");
+
+      chooseBox();
+      function chooseBox(divBokstavPåKnapp) {
+        document.getElementById("valgt").innerHTML =
+          "Du har valgt " + divBokstavPåKnapp.id;
+
+        if (divBokstavPåKnapp.id == "buttonA") {
+          valgtDiv = divA;
+        } else if (divBokstavPåKnapp.id == "buttonB") {
+          valgtDiv = divB;
+        }
+        if (divBokstavPåKnapp != null && valgtDiv != null) {
+          let oldHeight = valgtDiv.style.height.replace("px", "");
+          let oldWidth = valgtDiv.style.width.replace("px", "");
+          widthSum.value = oldWidth;
+          heightSum.value = oldHeight;
+        }
+      }
+
+      calculate();
+      function calculate() {
+        var arealSum = widthSum.value * heightSum.value;
+        var height = "height: " + heightSum.value + "px; ";
+        var width = "width: " + widthSum.value + "px; ";
+
+        arealDiv.innerHTML =
+          "<div> " + "Arealet av " + valgtDiv.id + " er:" + arealSum + "</div>";
+
+        valgtDiv.style.height = heightSum.value + "px";
+        valgtDiv.style.width = widthSum.value + "px";
+      }
+    </script>
+  </body>
+</html>
