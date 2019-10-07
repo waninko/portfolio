@@ -6,7 +6,6 @@
             width: 100px;
             height: 60px;
         }
-        
     </style>
 </head>
 
@@ -32,9 +31,10 @@
         var divA = document.getElementById('a');
         var divB = document.getElementById('b');
         var divC = document.getElementById('c');
+
         var buttonLastClicked;
-        //
         var buttonBeforeLastClicked;
+        
         var numberOfClicksA = 0;
         var numberOfClicksB = 0;
         var numberOfClicksC = 0;
@@ -55,7 +55,6 @@
                 }
                else if(totalClicks == 2){
                     buttonLastClicked = buttonClicked;
-                    totalClicks = 0;
                 }
             }
 
@@ -63,16 +62,17 @@
                 infoDiv.innerHTML += 'B';
                 numberOfClicksB++;
                 totalClicks++;
+
                 if(totalClicks == 1){
                  buttonBeforeLastClicked = buttonClicked;
                 }
                else if(totalClicks == 2){
                     buttonLastClicked = buttonClicked;
-                    totalClicks = 0;
                 }
             }
             else if (buttonClicked == divC) {
                 infoDiv.innerHTML += 'C';
+                
                 numberOfClicksC++;
                 totalClicks++;
                
@@ -81,7 +81,6 @@
                 }
                else if(totalClicks == 2){
                     buttonLastClicked = buttonClicked;
-                    totalClicks = 0;
                 }
             }
 
@@ -96,6 +95,8 @@
             else if (numberOfClicksA == 2 || numberOfClicksB == 2 || numberOfClicksC == 2) {
                 infoDiv.innerHTML += '<br>(To ganger!)'
             }
+
+            if(totalClicks == 3){totalClicks = 0;}
 
 
             infoDiv.innerHTML += '<br> <br> Før det trykket du på ' + buttonLastClicked.innerHTML;
