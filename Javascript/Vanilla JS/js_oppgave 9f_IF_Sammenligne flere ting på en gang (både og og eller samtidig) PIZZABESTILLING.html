@@ -10,20 +10,20 @@
     <h3>Pizza-bestilling</h3>
     <div id="info" style="padding-bottom: 20px;">Gjør ett valg på hver linje:</div>
 
-    Bunn: <input id="tykkBunn" type="radio" name="bunn" onchange="info(this)" />Tykk
-    <input id="tynnBunn" type="radio" name="bunn" onchange="info(this)" />Tynn <br />
+    Bunn: <input id="tykkBunn" type="radio" name="bunn" onchange="info()" />Tykk
+    <input id="tynnBunn" type="radio" name="bunn" onchange="info()" />Tynn <br />
 
-    Fyll: <input id="fyllTaco" type="radio" name="fyll" onchange="info(this)" />Taco
-    <input id="fyllKylling" type="radio" name="fyll" onchange="info(this)" />Kylling
-    <input id="fyllPepperoni" type="radio" name="fyll" onchange="info(this)" />Pepperoni<br />
-	<input id="fyllAnanas" type="radio" name="fyll" onchange="info(this)" />Ananas<br />
+    Fyll: <input id="fyllTaco" type="radio" name="fyll" onchange="info()" />Taco
+    <input id="fyllKylling" type="radio" name="fyll" onchange="info()" />Kylling
+    <input id="fyllPepperoni" type="radio" name="fyll" onchange="info()" />Pepperoni<br />
+	<input id="fyllAnanas" type="radio" name="fyll" onchange="info()" />Ananas<br />
 
-    Størrelse: <input id="stor" type="radio" name="str" onchange="info(this)" />Stor
-    <input id="middels" type="radio" name="str" onchange="info(this)" />Middels
-    <input id="liten" type="radio" name="str" onchange="info(this)" />Liten<br />
+    Størrelse: <input id="stor" type="radio" name="str" onchange="info()" />Stor
+    <input id="middels" type="radio" name="str" onchange="info()" />Middels
+    <input id="liten" type="radio" name="str" onchange="info()" />Liten<br />
 
-	 Laget med Kjærlighet (100,- ekstra): <input id="medKjærlighet" type="radio" name="kjærlighet" onchange="info(this)" />Med Kjærlighet
-    <input id="utenKjærlighet" type="radio" name="kjærlighet" onchange="info(this)" />Uten Kjærlighet <br />
+	 Laget med Kjærlighet (100,- ekstra): <input id="medKjærlighet" type="radio" name="kjærlighet" onchange="info()" />Med Kjærlighet
+    <input id="utenKjærlighet" type="radio" name="kjærlighet" onchange="info()" />Uten Kjærlighet <br />
 
 
     <button id="bestill" disabled="" onclick="alert('Bestilt!');">Bestill</button>
@@ -46,22 +46,12 @@
 		var mKjær = document.getElementById('medKjærlighet');
 		var uKjær = document.getElementById('utenKjærlighet');
        
-	   function info(taco) {
-           var testArray = [];
+	   function info() {
             if ((bunnTykk.checked || bunnTynn.checked) &&
                 (fyllTaco.checked || fyllKylling.checked || fyllPepperoni.checked || fyllAnanas.checked ) &&
                 (strStor.checked || strMiddels.checked || strLiten.checked) &&
 				(mKjær.checked ||uKjær.checked)) {
-                infoDiv.innerHTML = 'Du har fylt ut alt og er klar til å bestille!' ;
-                
-                if(bunnTykk.checked || bunnTynn.checked) {
-                        testArray.push(fraThis);
-                        }
-                
-                   var fraThis = taco.id;
-                   
-                
-                //console.log("fra this " + testArray);
+                infoDiv.innerHTML = 'Du har fylt ut alt og er klar til å bestille!';
                 btnBestill.disabled = false;
             } else {
                 infoDiv.innerHTML = 'Du har ikke valgt:';

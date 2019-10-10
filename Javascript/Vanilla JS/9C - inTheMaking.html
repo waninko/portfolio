@@ -38,6 +38,7 @@
         var numberOfClicksA = 0;
         var numberOfClicksB = 0;
         var numberOfClicksC = 0;
+        
         var totalClicks = 0;
 
         function doClick(buttonClicked) {
@@ -95,9 +96,11 @@
             else if (numberOfClicksA == 2 || numberOfClicksB == 2 || numberOfClicksC == 2) {
                 infoDiv.innerHTML += '<br>(To ganger!)'
             }
+            
 
             if(totalClicks == 3){totalClicks = 0;}
 
+            
 
             infoDiv.innerHTML += '<br> <br> Før det trykket du på ' + buttonLastClicked.innerHTML;
             infoDiv.innerHTML += '<br> <br> og før dét igjen - på ' + buttonBeforeLastClicked.innerHTML;
