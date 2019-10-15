@@ -54,6 +54,7 @@ div.firstInRow {
 <div onclick= "clearFunction();">C</div>
 <div onclick="calculate();">=</div>
 <div onclick="addCharacter('+');">+</div>
+<div onclick="calculate('sqr');">SQR</div>
 
 
 
@@ -61,19 +62,34 @@ div.firstInRow {
 	var resultBox = document.getElementById('resultBox');
 
 	function addCharacter(x){
-	resultBox.innerHTML += x;
+        if(x !== 'sqr'){
+            resultBox.innerHTML += x;
+        }
+        
+	
 	}
 
 	function clearFunction() {
 		resultBox.innerHTML = ' '; // dette blanker ut skjermen - setter innholdet i resultBox til det som står i ' ' :) ''= blankt display ' y '  = en y i displayet
 	}
 
-	function calculate(){
-		var math =resultBox.innerHTML;
-		
-		math.replace('x', '*');
+	function calculate(recievedIfSQR){
+		var math = resultBox.innerHTML;
+
+        console.log("dette er parameteret: " + recievedIfSQR);
+		if(recievedIfSQR === 'sqr')
+        {
+            console.log("math ER sqr");
+            
+            resultBox.innerHTML = eval(Math.sqrt(math));
+        }
+        else{
+        math.replace('x', '*');
 		math.replace('÷', '/');
+        console.log("dette er math i else: " + math);
 		resultBox.innerHTML = eval(math);
+        }
+		
 	}
 </script>
 
