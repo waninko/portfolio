@@ -3,26 +3,26 @@
     {{searchInput}}
     <br>
     <div id="trackSearch">
-      {{msg}}
+      {{msg}}<br>
       <input type="text" v-model="searchInput">
       <br>
     </div>
 
-    <tr class="resultTable" v-for="(result, index) in searchOutput" v-bind:key="index">
-      <td>{{result.artistName}} ~ {{result.name}}</td>
-    </tr>
 
     <div id="countrySearch">
-      <br>Country to see top artists in:
+      <br>{{msg2}}<br>
       <input type="text" v-model="countryInput">
-      <br>
+      <br><br>
       <button @click="getMusicInfo()">Search!</button>
       <br>
     </div>
+    <tr class="resultTable" v-for="(result, index) in searchOutput" v-bind:key="index">
+      <td v-if="searchInput === result.artistName">{{result.artistName}} - {{result.name}} #of Plays so far this month: {{result.listeners}}</td>
+    </tr>
     <tr class="resultTable" v-for="(result, index) in countryOutput" v-bind:key="index">
       <td>
-        Number {{index}}. is
-        <b>{{result.name}}</b> and has
+        Number {{index+1}}. is
+        <b>{{result.name}}</b><br> and has
         <b>{{result.listeners | formatNumber}}</b> listeners!
       </td>
       <br>
@@ -35,7 +35,8 @@ export default {
   name: "ShowMusic",
   data() {
     return {
-      msg: "Search track names/ Artist names: ",
+      msg: "Search Artist names to see most played tracks!: ",
+      msg2: "Country to see top artists in:",
       searchInput: "",
       searchOutput: [],
       countryInput: "",
@@ -50,17 +51,19 @@ export default {
     }
   },
   methods: {
+    
     getMusicInfo() {
       const LastFM = require("last-fm");
-      const lastfm = new LastFM("2966e89ae7f423c13dc2fd74303548b3", {
-        userAgent: "MyApp/1.0.0 (http://example.com)"
-      });
+      const lastfm = new LastFM("2966e89ae7f423c13dc2fd74303548b3");
       console.log("this i method: " + this.searchInput);
       this.searchOutput.length = 0;
       this.countryOutput.length = 0;
 
       if (!this.searchInput == "") {
-        lastfm.trackSearch({ q: this.searchInput }, (err, data) => {
+        let capitalizedSearch = this.searchInput.charAt(0).toUpperCase() + this.searchInput.slice(1);
+        this.searchInput = capitalizedSearch;
+        console.log(capitalizedSearch);
+        lastfm.trackSearch({ q: capitalizedSearch }, (err, data) => {
           if (!err) {
             console.log(...data.result);
             this.searchOutput.push(...data.result);
@@ -95,6 +98,9 @@ td {
 }
 #trackSearch, #countrySearch {
   padding: 10px;
+}
+.resultTable{
+  padding-left: 150px;
 }
 
 </style>

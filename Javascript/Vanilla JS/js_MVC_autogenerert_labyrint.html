@@ -67,13 +67,10 @@
 		function initRow(size, rowIndex, alt1, alt2){
 		var row = [];
 		for (var columnIndex = 0; columnIndex <= size*2; columnIndex++) {
-			var cell = {};
+			var cell = {}; //Begynner som et tomt object som får verdier underveis i loopen
 			cell.type = columnIndex % 2 === 0 ? alt1 : alt2;
-			if(cell.type === 'small wall'
-			    || columnIndex===0
-				|| columnIndex===size*2
-				|| rowIndex===0
-				|| rowIndex===size*2)
+			if(cell.type === 'small wall' || columnIndex===0 || columnIndex===size*2
+				                          || rowIndex===0    || rowIndex===size*2)
 			{cell.isOpen= false;}
 
 			else if (cell.type === 'room')	
@@ -81,15 +78,15 @@
 			
 			else
 				cell.isOpen = Math.random() < 0.5;
-			row.push(cell);	
+			row.push(cell);	 //push heilå shiten inn i arrayet...
 		 }
-			return row;
+			return row; //... og vis det fram der funksjonen kalles
 		}
 		
 
         function switchWall(rowIndex, columnIndex) {  //skal kunne "slå av og på" veggene
            var cellModel = mazeModel.rows[rowIndex][columnIndex];
-            cellModel.isOpen = !cellModel.isOpen; //dersom true, sett til false
+            cellModel.isOpen = !cellModel.isOpen; //dersom true, sett til false (om veggen er "på" når den trykkes på, slå den "av")
           
 			updateView();
         }
@@ -102,9 +99,9 @@
                 var rowModel = rows[rowIndex];
                 
                 for (var columnIndex = 0; columnIndex < rows.length; columnIndex++) {
-                    var cellModel = rowModel[columnIndex];
-                    var cssClass = '';
-                    var onClick = ' onclick="switchWall(' + rowIndex + ',' + columnIndex + ')" ';
+                    var cellModel = rowModel[columnIndex]; 
+                    var cssClass = ''; //begynner blank, skal brukes til å klisses inn i style = "cssClass" lenger nede
+                    var onClick = ' onclick="switchWall(' + rowIndex + ',' + columnIndex + ')" '; //en onclick lagret i en variabel fordi... latskap :P
 
                     if (cellModel.type === 'room') {
                         cssClass = 'room';
@@ -113,8 +110,10 @@
                     } else if (cellModel.type === 'small wall') {
                         cssClass = 'small wall';
                         onClick = '';
+
                     } else if (cellModel.type === 'wide wall') {
                         cssClass = 'wide ' + (cellModel.isOpen ? 'noWall' : 'wall');
+
                     } else if (cellModel.type === 'high wall') {
                         cssClass = 'high ' + (cellModel.isOpen ? 'noWall' : 'wall');
                     }
