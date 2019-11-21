@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <style>
+    div {
+      width: 100px;
+      height: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    Ferdighet 9c - Valgsetninger - Sammenligne to objekter (f.eks. er det
+    samme div-element i to elementer?)
+  </p>
+  <div id="a" onclick="doClick(this)" style="background-color: pink">A</div>
+  <div id="b" onclick="doClick(this)" style="background-color: lightgreen">
+    B
+  </div>
+  <div id="c" onclick="doClick(this)" style="background-color: lightblue">
+    C
+  </div>
+  <div id="info" onclick="doClick(this)">Tykk på en firkant!</div>
+
+  <script>
+    var infoDiv = document.getElementById("info");
+    var divA = document.getElementById("a");
+    var divB = document.getElementById("b");
+    var divC = document.getElementById("c");
+    var buttonLastClicked;
+    var buttonBeforeLastClicked;
+    var buttonClicked1;
+    var totalClick;
+    var totalClickA = 0;
+    var totalClickB = 0;
+    var totalClickC = 0;
+
+    function doClick(buttonClicked) {
+      buttonBeforeLastClicked = buttonLastClicked;
+      buttonLastClicked = buttonClicked1;
+      buttonClicked1 = buttonClicked;
+      infoDiv.innerHTML = "Du trykket på firkant ";
+
+
+      if (buttonClicked == divA) {
+        infoDiv.innerHTML += "A";
+        totalClick++;
+        totalClickA++;
+        if (totalClick == 1) {
+          buttonBeforeLastClicked = buttonClicked;
+        }
+        else if (totalClick == 2) {
+          buttonLastClicked = buttonClicked;
+        }
+
+        console.log("Du har trykket " + totalClickA + " ganger");
+
+      } else if (buttonClicked == divB) {
+        infoDiv.innerHTML += "B";
+        totalClick++;
+        totalClickB++;
+        if (totalClick == 1) {
+          buttonBeforeLastClicked = buttonClicked;
+        }
+        else if (totalClick == 2) {
+          buttonLastClicked = buttonClicked;
+        }
+
+      } else if (buttonClicked == divC) {
+        infoDiv.innerHTML += "C";
+        totalClick++;
+        totalClickC++;
+        if (totalClick == 1) {
+          buttonBeforeLastClicked = buttonClicked;
+        }
+        else if (totalClick == 2) {
+          buttonLastClicked = buttonClicked;
+        }
+      }
+      if (buttonLastClicked == buttonClicked) {
+        infoDiv.innerHTML += " (samme som forrige gang)";
+      }
+
+
+      infoDiv.innerHTML += '<br/> <br/>';
+      infoDiv.innerHTML += buttonLastClicked.innerHTML + " klikket du på for   1 ganger siden ";
+      infoDiv.innerHTML += '<br/> <br/>';
+      infoDiv.innerHTML += buttonBeforeLastClicked.innerHTML + "  klikket du på for 2 ganger siden ";
+    }
+  </script>
+</body>
+
+</html>
