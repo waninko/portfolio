@@ -56,22 +56,9 @@
 
     <script>
 		
-		let chosenDiv = document.getElementById("div1");
-		let divsWithChosenClass = document.getElementsByClassName('chosen');
-		 
-       
-
+		let chosenDiv = document.getElementById("div1"); //starte med en valgt div, så remove har noe å ..remove
+		
         function chooseDiv(x) {  
-        //    if(x.classList.contains('chosen')){
-		//     x.classList.remove('chosen');
-		// 	chosenDiv = " "; 
-		//    }
-        //     else{
-        //     chosenDiv.classList.remove('chosen');
-		// 	chosenDiv = x;	
-        //     x.classList.add('chosen'); 
-		// 	}
-
         chosenDiv.classList.remove('chosen'); //fjern stil fra forrige valgte
         x.classList.toggle('chosen'); //sett stil på den nåvalgte
         chosenDiv = x; //lagre nåvalgte så stilen kan slås av igjen når man velger en ny div
