@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+
+		div {
+			text-align: center;
+            color: black;
+            width: 200px;
+        }
+
+		.chosen{
+			border: 1px solid lightblue;
+		}
+
+        .bkg {
+            background-color: blueviolet;
+        }
+
+		.border {
+			border: 4px dotted pink;
+		}
+
+		.padding {
+			padding: 20px;
+			
+		}
+
+		.font {
+			font-style: italic;
+			font-weight: bold;
+			
+		}
+
+		.textcolor{
+			color: red;
+		}
+
+    </style>
+</head>
+<body>
+    <br>
+    <div id="div1"  onclick="chooseDiv(this)">DIV 1</div> 
+	<div id="div2"  onclick="chooseDiv(this)">DIV 2</div>
+	<div id="div3"  onclick="chooseDiv(this)">DIV 3</div>
+	<div id="div4"  onclick="chooseDiv(this)">DIV 4</div>
+	<div id="div5"  onclick="chooseDiv(this)">DIV 5 </div>
+	<br>
+		
+    <input id="bkg" type="checkbox" onchange="checkBox(this)">BKG</input>
+	<input id="border" type="checkbox" onchange="checkBox(this)">BORDER</input>
+	<input id="padding" type="checkbox" onchange="checkBox(this)">PADDING</input>
+	<input id="font" type="checkbox" onchange="checkBox(this)">FONT</input>
+	<input id="textcolor" type="checkbox" onchange="checkBox(this)">TEXTCOLOR</input>
+
+    <script>
+		
+		let chosenDiv = document.getElementById("div1");
+		let divsWithChosenClass = document.getElementsByClassName('chosen');
+		 
+       
+
+        function chooseDiv(x) {  
+        //    if(x.classList.contains('chosen')){
+		//     x.classList.remove('chosen');
+		// 	chosenDiv = " "; 
+		//    }
+        //     else{
+        //     chosenDiv.classList.remove('chosen');
+		// 	chosenDiv = x;	
+        //     x.classList.add('chosen'); 
+		// 	}
+
+        chosenDiv.classList.remove('chosen'); //fjern stil fra forrige valgte
+        x.classList.toggle('chosen'); //sett stil på den nåvalgte
+        chosenDiv = x; //lagre nåvalgte så stilen kan slås av igjen når man velger en ny div
+
+        //huske stilcheckene som er valgt
+        bkg.checked = chosenDiv.classList.contains('bkg');
+        border.checked = chosenDiv.classList.contains('border');
+        padding.checked = chosenDiv.classList.contains('padding');
+        font.checked = chosenDiv.classList.contains('font');
+        textcolor.checked = chosenDiv.classList.contains('textcolor');
+        }
+
+		function checkBox(y) { 
+            chosenDiv.classList.toggle(y.id);  //id har samme name som class
+			 }
+        
+    </script>
+</body>
+</html>
